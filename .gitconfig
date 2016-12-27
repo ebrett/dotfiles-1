@@ -1,6 +1,6 @@
 [user]
-	name = Brett McHargue
-	email = brett.mchargue@gmail.com
+  name = Brett McHargue
+  email = brett.mchargue@gmail.com
 [core]
   editor = vi
   excludesfile = ~/.gitignore
