@@ -106,3 +106,5 @@ prod_command_trap () {
 }
 shopt -s extdebug
 trap prod_command_trap DEBUG
+
+eval "$(rbenv init -)"

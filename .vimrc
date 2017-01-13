@@ -50,3 +50,5 @@ inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
 inoremap {}     {}
+
+let g:mustache_abbreviations = 1
