@@ -45,6 +45,12 @@ set clipboard=unnamed   " allow yy, etc. to interact with OS X clipboard
 " shortcuts
 map <F2> :NERDTreeToggle<CR>
 
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
 " remapped keys
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O

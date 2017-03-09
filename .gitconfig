@@ -2,7 +2,7 @@
   name = Brett McHargue
   email = brett.mchargue@gmail.com
 [core]
-  editor = vi
+  editor = vim
   excludesfile = ~/.gitignore
   autocrlf = input
 [color]
