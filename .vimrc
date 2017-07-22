@@ -43,11 +43,18 @@ set clipboard=unnamed   " allow yy, etc. to interact with OS X clipboard
 " shortcuts
 map <F2> :NERDTreeToggle<CR>
 
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+packadd minpac
+call minpac#init()
+
+call minpac#add('tpope/vim-surround')
+call minpac#add('tpope/vim-unimpaired')
+call minpac#add('k-takata/minpac', {'type':'opt'})
+call minpac#add('thoughtbot/vim-rspec')
+call minpac#add('scrooloose/nerdtree')
+
+" minpac commands:
+command! PackUpdate call minpac#update()
+command! PackClean call minpac#clean()
 
 " remapped keys
 inoremap {      {}<Left>
@@ -56,3 +63,10 @@ inoremap {{     {
 inoremap {}     {}
 
 let g:mustache_abbreviations = 1
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
