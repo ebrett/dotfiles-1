@@ -15,9 +15,11 @@ filetype on             " enable filetype detection
 filetype indent on      " enable filetype-specific indenting
 filetype plugin on      " enable filetype-specific plugins
 
+set inccommand=split    " show effects of command incrementally
+
 " column-width visual indication
-let &colorcolumn=join(range(81,999),",")
-highlight ColorColumn ctermbg=235 guibg=#001D2F
+" let &colorcolumn=join(range(81,999),",")
+" highlight ColorColumn ctermbg=235 guibg=#001D2F
 
 " tabs and indenting
 set autoindent          " auto indenting
@@ -51,6 +53,8 @@ call minpac#add('tpope/vim-unimpaired')
 call minpac#add('k-takata/minpac', {'type':'opt'})
 call minpac#add('thoughtbot/vim-rspec')
 call minpac#add('scrooloose/nerdtree')
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('machakann/vim-highlightedyank')
 
 " minpac commands:
 command! PackUpdate call minpac#update()
