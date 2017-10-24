@@ -1,6 +1,6 @@
 [user]
-  name = Brett McHargue
-  email = brett.mchargue@gmail.com
+	name = Brett McHargue
+	email = brett.mchargue@gmail.com
 [core]
   editor = vim
 	excludesfile = /Users/brett/.gitignore
@@ -28,9 +28,18 @@
   d = diff
   dc = diff --cached
   l = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
+  recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+  overview = log --all --since='2 weeks' --oneline --no-merges
+  recap = log --all --no-merges --author=brett.mchargue@gmail.com
+  stats = shortlog -sn --since='10 weeks' --until='2 weeks'
+  today = log --since=00:00:00 --all --no-merges --oneline --author=brett.mchargue@gmail.com
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[init]
+	templatedir = ~/.git-templates
+[commit]
+	template = /Users/brett/.stCommitMsg
