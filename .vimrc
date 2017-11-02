@@ -55,6 +55,9 @@ call minpac#add('thoughtbot/vim-rspec')
 call minpac#add('scrooloose/nerdtree')
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('machakann/vim-highlightedyank')
+call minpac#add('tpope/vim-rails')
+call minpac#add('airblade/vim-gitgutter')
+call minpac#add('ctrlpvim/ctrlp.vim')
 
 " minpac commands:
 command! PackUpdate call minpac#update()
@@ -73,4 +76,6 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+let g:ctrlp_map = '<c-p>'
 
