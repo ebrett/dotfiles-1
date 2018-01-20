@@ -1,8 +1,9 @@
 [user]
 	name = Brett McHargue
 	email = brett.mchargue@gmail.com
+	signingkey = 8FC5192E413298CE
 [core]
-  editor = vim
+  editor = nvim
 	excludesfile = /Users/brett/.gitignore
   autocrlf = input
 [color]
@@ -27,12 +28,13 @@
   cam = commit -am
   d = diff
   dc = diff --cached
-  l = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
+  l = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --
   recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
   overview = log --all --since='2 weeks' --oneline --no-merges
   recap = log --all --no-merges --author=brett.mchargue@gmail.com
   stats = shortlog -sn --since='10 weeks' --until='2 weeks'
   today = log --since=00:00:00 --all --no-merges --oneline --author=brett.mchargue@gmail.com
+  release = describe --tags --match 'r*'
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -43,3 +45,4 @@
 	templatedir = ~/.git-templates
 [commit]
 	template = /Users/brett/.stCommitMsg
+	gpgsign = true

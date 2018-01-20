@@ -62,6 +62,10 @@ alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %
 alias gsd='git svn dcommit'
 alias gsfr='git svn fetch && git svn rebase'
 
+alias vim='nvim'
+alias ll='ls -la'
+alias la='ls -a'
+
 # Turn on Git autocomplete.
 brew_prefix=`brew --prefix`
 if [ -f $brew_prefix/etc/bash_completion ]; then
@@ -97,3 +101,4 @@ eval "$(/Users/brett/work/cplus/bin/cplus init -)"
 
 PROMPT_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
 export PROMPT_COMMAND="${PROMPT_TITLE}; ${PROMPT_COMMAND}"
+export GPG_TTY=$(tty)

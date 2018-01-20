@@ -49,15 +49,20 @@ packadd minpac
 call minpac#init()
 
 call minpac#add('tpope/vim-surround')
+call minpac#add('tpope/vim-rails')
 call minpac#add('tpope/vim-unimpaired')
+call minpac#add('tpope/vim-dispatch')
 call minpac#add('k-takata/minpac', {'type':'opt'})
 call minpac#add('thoughtbot/vim-rspec')
 call minpac#add('scrooloose/nerdtree')
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('machakann/vim-highlightedyank')
-call minpac#add('tpope/vim-rails')
-call minpac#add('airblade/vim-gitgutter')
 call minpac#add('ctrlpvim/ctrlp.vim')
+call minpac#add('elmcast/elm-vim')
+" call minpac#add('w0rp/ale')
+call minpac#add('neomake/neomake')
+call minpac#add('mattn/emmet-vim')
+call minpac#add('godlygeek/tabular')
 
 " minpac commands:
 command! PackUpdate call minpac#update()
@@ -79,3 +84,7 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 let g:ctrlp_map = '<c-p>'
 
+" Elm mappings
+let g:elm_jump_to_error    = 0
+let g:elm_make_output_file = "elm.js"
+let g:elm_format_autosave  = 1
