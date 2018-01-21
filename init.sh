@@ -1,12 +1,13 @@
 #!/bin/bash
 
-# ansible-galaxy install -r ~/work/mac-dev-playbook/requirements.yml
-# ansible-playbook ~/work/mac-dev-playbook/main.yml -i ~/work/mac-dev-playbook/inventory -K
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+ansible-galaxy install -r ~/work/mac-dev-playbook/requirements.yml
+ansible-playbook ~/work/mac-dev-playbook/main.yml -i ~/work/mac-dev-playbook/inventory -K
 pip3 install neovim
 
-chsh -s /usr/local/bin/zsh
+brew tap caskroom/fonts
+brew cask install font-fira-code
+# chsh -s /usr/local/bin/zsh
+chsh -s /bin/bash
 
 rm -rf ~/.vim ~/.vimrc ~/.zshrc ~/.tmux ~/.tmux.conf 2> /dev/null
 rm -rf ~/.bash_profile 2> /dev/null
