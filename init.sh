@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ansible-galaxy install -r ~/work/mac-dev-playbook/requirements.yml
-ansible-playbook ~/work/mac-dev-playbook/main.yml -i ~/work/mac-dev-playbook/inventory -K
+# ansible-galaxy install -r ~/work/mac-dev-playbook/requirements.yml
+# ansible-playbook ~/work/mac-dev-playbook/main.yml -i ~/work/mac-dev-playbook/inventory -K
 pip3 install neovim
 
 brew tap caskroom/fonts
@@ -15,11 +15,11 @@ rm -rf ~/.inputrc 2> /dev/null
 rm -rf ~/.gitconfig 2> /dev/null
 rm -rf ~/.gitignore 2> /dev/null
 
-mkdir -p ~/.config ~/.config/nvim
-
 mkdir -p ~/.vim/pack/bundle/start
 mkdir -p ~/.vim/pack/bundle/opt
 mkdir -p ~/.vim/pack/minpac/opt
+git clone https://github.com/k-takata/minpac.git \
+    ~/.vim/pack/minpac/opt/minpac
 
 ln -s ~/work/dotfiles/zshrc ~/.zshrc
 ln -s ~/work/dotfiles/tmux.conf ~/.tmux.conf

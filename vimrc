@@ -77,6 +77,7 @@ call minpac#add('godlygeek/tabular')
 call minpac#add('Yggdroot/indentline')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('mhinz/vim-grepper')
+call minpac#add('henrik/vim-ruby-runner')
 
 " minpac commands:
 command! PackUpdate call minpac#update()

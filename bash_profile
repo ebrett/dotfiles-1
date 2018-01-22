@@ -1,10 +1,3 @@
-#
-# .bash_profile
-#
-# @author Jeff Geerling
-# @see .inputrc
-#
-
 # Nicer prompt.
 export PS1="\[\e[0;32m\]\]\[\] \[\e[1;32m\]\]\t \[\e[0;2m\]\]\w \[\e[0m\]\]\[$\] "
 
@@ -16,11 +9,21 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export PATH=$HOME/bin:/usr/local/git/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-# Include alias file (if present) containing aliases for ssh, etc.
-if [ -f ~/.bash_aliases ]
-then
-  source ~/.bash_aliases
-fi
+# Git aliases.
+alias gs='git status'
+alias gc='git commit'
+alias gp='git pull --rebase'
+alias gcam='git commit -am'
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+alias gsd='git svn dcommit'
+alias gsfr='git svn fetch && git svn rebase'
+
+alias vim='nvim'
+alias ll='ls -la'
+alias la='ls -a'
+
+# Flush DNS cache (See: http://support.apple.com/kb/ht5343).
+alias flush-dns='sudo killall -HUP mDNSResponder'
 
 # Include bashrc file (if present).
 if [ -f ~/.bashrc ]
@@ -36,12 +39,6 @@ function route_add() {
 # Delete the route added above.
 function route_delete() {
   sudo route delete 10.0.0.0
-}
-
-# Route IRC traffic through one of my servers.
-# Use SOCKS5 settings 'localhost' and 6667 for server/port.
-function irc_proxy() {
-  ssh -vD 6667 geerlingguy@atl1.servercheck.in
 }
 
 # Syntax-highlight code for copying and pasting.
