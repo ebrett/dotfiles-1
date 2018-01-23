@@ -7,7 +7,7 @@ pip3 install neovim
 brew tap caskroom/fonts
 brew cask install font-fira-code
 # chsh -s /usr/local/bin/zsh
-chsh -s /bin/bash
+# chsh -s /bin/bash
 
 rm -rf ~/.vim ~/.vimrc ~/.zshrc ~/.tmux ~/.tmux.conf 2> /dev/null
 rm -rf ~/.bash_profile 2> /dev/null
