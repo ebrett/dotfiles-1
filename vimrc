@@ -64,6 +64,7 @@ call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-rails')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('tpope/vim-dispatch')
+call minpac#add('radenling/vim-dispatch-neovim')
 call minpac#add('k-takata/minpac', {'type':'opt'})
 call minpac#add('thoughtbot/vim-rspec')
 call minpac#add('scrooloose/nerdtree')
@@ -74,7 +75,6 @@ call minpac#add('elmcast/elm-vim')
 call minpac#add('w0rp/ale')
 call minpac#add('mattn/emmet-vim')
 call minpac#add('godlygeek/tabular')
-call minpac#add('Yggdroot/indentline')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('mhinz/vim-grepper')
 call minpac#add('henrik/vim-ruby-runner')
@@ -121,9 +121,6 @@ let g:ctrlp_map = '<c-p>'
 let g:elm_jump_to_error    = 0
 let g:elm_make_output_file = "elm.js"
 let g:elm_format_autosave  = 1
-
-let g:indentLine_enabled=1
-let g:indentLine_char=")"
 
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
