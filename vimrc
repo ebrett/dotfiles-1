@@ -60,52 +60,59 @@ let mapleader="\<SPACE>"
 
 packadd minpac
 call minpac#init()
+call minpac#add('k-takata/minpac', {'type':'opt'})
+
+if has('nvim')
+  call minpac#add('Shougo/deoplete.nvim')
+  call minpac#add('Shougo/neco-vim')
+  call minpac#add('fishbullet/deoplete-ruby')
+end
+
+" Theme
+call minpac#add('mhartington/oceanic-next')
+" Linting
+call minpac#add('w0rp/ale')
+" Surrounding
 call minpac#add('tpope/vim-surround')
+" File tree
+call minpac#add('scrooloose/nerdtree')
+" Git
+call minpac#add('airblade/vim-gitgutter')
+" Snippets
+call minpac#add('sirver/ultisnips')
+" Ruby / Rails
 call minpac#add('tpope/vim-rails')
+call minpac#add('thoughtbot/vim-rspec')
+call minpac#add('henrik/vim-ruby-runner')
+" Elm
+call minpac#add('elmcast/elm-vim')
+" Other
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('tpope/vim-dispatch')
 call minpac#add('radenling/vim-dispatch-neovim')
-call minpac#add('k-takata/minpac', {'type':'opt'})
-call minpac#add('thoughtbot/vim-rspec')
-call minpac#add('scrooloose/nerdtree')
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('machakann/vim-highlightedyank')
 call minpac#add('ctrlpvim/ctrlp.vim')
-call minpac#add('elmcast/elm-vim')
-call minpac#add('w0rp/ale')
 call minpac#add('mattn/emmet-vim')
 call minpac#add('godlygeek/tabular')
-call minpac#add('airblade/vim-gitgutter')
 call minpac#add('mhinz/vim-grepper')
-call minpac#add('henrik/vim-ruby-runner')
 
 " minpac commands:
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 
 " remapped keys
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
+" inoremap {      {}<Left>
+" inoremap {<CR>  {<CR>}<Esc>O
+" inoremap {{     {
+" inoremap {}     {}
 
 nnoremap <Leader>p :CtrlP<CR>
-nnoremap <Leader>t :CtrlP<CR>
-
-nnoremap <Left> :vertical resize -1<CR>
-nnoremap <Right> :vertical resize +1<CR>
-nnoremap <Up> resize -1<CR>
-nnoremap <Down> resize +1<CR>
 
 imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
-
-nmap <Leader><Leader> <c-^>
-
-nnoremap <Tab> :bnext!<CR>
-nnoremap <S-Tab> :bprev!<CR>
 
 let g:mustache_abbreviations = 1
 
@@ -131,3 +138,12 @@ nnoremap <Leader>fb :Grepper<Space>-buffers<Space>-query<Space>-<Space>
 
 let g:deoplete#enable_at_startup=1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+syntax enable
+colorscheme OceanicNext
+
+let g:airline_theme='oceanicnext'
+
+if (has("termguicolors"))
+  set termguicolors
+end
