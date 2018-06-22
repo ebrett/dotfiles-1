@@ -71,6 +71,7 @@ end
 " Theme
 call minpac#add('mhartington/oceanic-next')
 " Linting
+call minpac#add('sheerun/vim-polyglot')
 call minpac#add('w0rp/ale')
 " Surrounding
 call minpac#add('tpope/vim-surround')
@@ -78,6 +79,8 @@ call minpac#add('tpope/vim-surround')
 call minpac#add('scrooloose/nerdtree')
 " Git
 call minpac#add('airblade/vim-gitgutter')
+call minpac#add('tpope/vim-git')
+call minpac#add('tpope/vim-fugitive')
 " Snippets
 call minpac#add('sirver/ultisnips')
 " Ruby / Rails
@@ -86,6 +89,11 @@ call minpac#add('thoughtbot/vim-rspec')
 call minpac#add('henrik/vim-ruby-runner')
 " Elm
 call minpac#add('elmcast/elm-vim')
+" Phoenix
+call minpac#add('c-brenn/phoenix.vim')
+call minpac#add('tpope/projectionist')
+" Elixir
+call minpac#add('slashmili/alchemist.vim')
 " Other
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('tpope/vim-dispatch')
@@ -96,6 +104,7 @@ call minpac#add('ctrlpvim/ctrlp.vim')
 call minpac#add('mattn/emmet-vim')
 call minpac#add('godlygeek/tabular')
 call minpac#add('mhinz/vim-grepper')
+call minpac#add('tpope/vim-commentary')
 
 " minpac commands:
 command! PackUpdate call minpac#update()
@@ -130,6 +139,7 @@ let g:elm_make_output_file = "elm.js"
 let g:elm_format_autosave  = 1
 
 let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#ale#enabled=1
 let g:airline_powerline_fonts=1
 set laststatus=2
 
@@ -144,6 +154,9 @@ colorscheme OceanicNext
 
 let g:airline_theme='oceanicnext'
 
+let g:ale_sign_column_always = 1
 if (has("termguicolors"))
   set termguicolors
 end
+
+let g:alchemist_tag_disable = 1
