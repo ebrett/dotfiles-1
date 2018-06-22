@@ -1,7 +1,7 @@
 [user]
 	name = Brett McHargue
-	email = brett.mchargue@gmail.com
-	signingkey = 8FC5192E413298CE
+	email = brett.mchargue@steelscout.com
+	signingkey = 8C0EEB0EBA2B2E33
 [core]
   editor = nvim
 	excludesfile = /Users/brett/.gitignore
@@ -16,7 +16,7 @@
 [credential]
   helper = osxkeychain
 [push]
-  default = simple
+	default = current
 [merge]
   tool = kdiff3
 [difftool]
@@ -31,9 +31,9 @@
   l = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --
   recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
   overview = log --all --since='2 weeks' --oneline --no-merges
-  recap = log --all --no-merges --author=brett.mchargue@gmail.com
+  recap = log --all --no-merges --author=brett.mchargue@steelscout.com
   stats = shortlog -sn --since='10 weeks' --until='2 weeks'
-  today = log --since=00:00:00 --all --no-merges --oneline --author=brett.mchargue@gmail.com
+  today = log --since=00:00:00 --all --no-merges --oneline --author=brett.mchargue@steelscout.com
   release = describe --tags --match 'r*'
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -46,3 +46,8 @@
 [commit]
 	template = /Users/brett/.stCommitMsg
 	gpgsign = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
