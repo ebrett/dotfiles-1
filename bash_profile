@@ -1,15 +1,15 @@
-# Nicer prompt.
-export PS1="\[\e[0;32m\]\]\[\] \[\e[1;32m\]\]\t \[\e[0;2m\]\]\w \[\e[0m\]\]\[$\] "
-
 # Use colors.
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
+export VISUAL=nvim
+
 # Custom $PATH with extra locations.
-export PATH=$HOME/bin:/usr/local/git/bin:$PATH
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+#export PATH=$HOME/bin:/usr/local/git/bin:$PATH
+#export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Git aliases.
+alias co='git checkout'
 alias gs='git status'
 alias gc='git commit'
 alias gp='git pull --rebase'
@@ -18,12 +18,18 @@ alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %
 alias gsd='git svn dcommit'
 alias gsfr='git svn fetch && git svn rebase'
 
+
 alias vim='nvim'
 alias ll='ls -la'
 alias la='ls -a'
 
+# Heroku aliases
+alias hpg='heroku pg:pull postgresql-cubed-79557 scout_api -a scout-api-production'
+
 # Flush DNS cache (See: http://support.apple.com/kb/ht5343).
 alias flush-dns='sudo killall -HUP mDNSResponder'
+
+alias krails='kill -9 $(lsof -i tcp:5100 -t)'
 
 # Include bashrc file (if present).
 if [ -f ~/.bashrc ]
@@ -81,3 +87,8 @@ eval "$(rbenv init -)"
 PROMPT_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
 export PROMPT_COMMAND="${PROMPT_TITLE}; ${PROMPT_COMMAND}"
 export GPG_TTY=$(tty)
+
+if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  __GIT_PROMPT_DIR="/usr/local/opt/bash-git-prompt/share"
+  source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
+fi

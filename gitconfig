@@ -1,10 +1,10 @@
 [user]
-	name = Brett McHargue
-	email = brett.mchargue@steelscout.com
-	signingkey = 8C0EEB0EBA2B2E33
+  name = Brett McHargue
+  email = brett.mchargue@gmail.com
+  signingkey = F1373FA944C73464
 [core]
   editor = nvim
-	excludesfile = /Users/brett/.gitignore
+  excludesfile = /Users/brett/.gitignore
   autocrlf = input
 [color]
   branch = auto
@@ -16,12 +16,14 @@
 [credential]
   helper = osxkeychain
 [push]
-	default = current
+  default = current
 [merge]
   tool = kdiff3
 [difftool]
   prompt = false
 [alias]
+  co = checkout
+  b = branch
   c = commit
   ca = commit -a
   cm = commit -m
@@ -36,18 +38,20 @@
   today = log --since=00:00:00 --all --no-merges --oneline --author=brett.mchargue@steelscout.com
   release = describe --tags --match 'r*'
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 [init]
-	templatedir = ~/.git-templates
+  templatedir = ~/.git-templates
 [commit]
-	template = /Users/brett/.stCommitMsg
-	gpgsign = true
+  template = /Users/brett/.stCommitMsg
+  gpgsign = true
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+[gpg]
+  program = gpg2

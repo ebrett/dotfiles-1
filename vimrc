@@ -36,6 +36,9 @@ set tabstop=2           " 2 spaces for tabs
 set softtabstop=2       " convert tabs to space
 set shiftwidth=2        " 2 spaces for indentation
 set expandtab           " spaces instead of tabs
+highlight SpecialKey ctermfg=1
+set list
+set listchars=tab:T>
 
 " bells
 set noerrorbells        " turn off audio bell
@@ -105,11 +108,13 @@ call minpac#add('mattn/emmet-vim')
 call minpac#add('godlygeek/tabular')
 call minpac#add('mhinz/vim-grepper')
 call minpac#add('tpope/vim-commentary')
+call minpac#add('avakhov/vim-yaml')
 
 " minpac commands:
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 
+let g:rspec_command = "!bundle exec rspec {spec}"
 " remapped keys
 " inoremap {      {}<Left>
 " inoremap {<CR>  {<CR>}<Esc>O
